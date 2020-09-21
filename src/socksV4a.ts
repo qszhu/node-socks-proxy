@@ -57,10 +57,6 @@ function replyRequest(socket: net.Socket, CD: number) {
 }
 
 class UpstreamSocket extends BaseUpstreamSocket {
-  constructor(socket: net.Socket, clientSocket: net.Socket, dstAddr: string, dstPort: number) {
-    super(socket, clientSocket, dstAddr, dstPort)
-  }
-
   onConnection() {
     replyRequest(this.clientSocket, REPLY.GRANTED)
   }
